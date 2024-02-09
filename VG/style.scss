@@ -1,0 +1,258 @@
+@import url(reset.css);
+@import url(fonts/stylesheet.css);
+
+h1,h2,h3,h4,h5,h6,p,a {
+    font-family: 'Gilroy';
+    line-height: 1.2;
+}
+
+@mixin heading_block{
+    font-size: 36px;
+    font-weight: 500;
+}
+@mixin text_accent {
+    font-size: 30px;
+    font-weight: 300;
+}
+@mixin text_regular {
+    font-size: 23px;
+    font-weight: 200;
+}
+@mixin figcaption {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Gilroy';
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.wrapper__f6 {
+    background-color: #F6F6F6;
+    margin: 50px 0;
+    padding: 50px 0;
+}
+
+/* === HEADER === */
+
+header {
+    padding: 30px 0;
+    top: 0;
+    position: sticky;
+    background-color: #F6F6F6;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        a {
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+            transition: .3s linear;
+            opacity: .7;
+            &:hover {
+                text-decoration: underline;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* === INTRO === */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    img {
+        width: 100%;
+    }
+    
+    .intro_text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 50px;
+            font-weight: 700;
+            width: 250px;
+            margin-right: 300px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+/* === SKILLS === */ 
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    h2 {
+        @include heading_block();
+        flex-basis: 1200px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    h5 {
+        @include text_accent();
+        text-align: center;
+    }
+}
+
+/* === BOT === */
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    h2 {
+        @include heading_block();
+    }
+    h3 {
+        @include text_accent();
+    }
+    p {
+        @include text_regular();
+    }
+    img {
+        width: 350px;
+    }
+    figcaption {
+        @include figcaption();
+    }
+    h6 {
+        @include text_accent();
+        font-weight: 600;
+    }
+}
+
+/* === NOT WEB === */
+
+.not-web {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        @include heading_block();
+    }
+    h3 {
+        @include text_accent();
+        margin-top: 10px;
+    }
+    h6 {
+        @include figcaption();
+    }
+
+    .not-web_game {
+        img {
+            width: 500px;
+        }
+        h6 {
+            margin-bottom: 10px;
+        }
+        p {
+            @include figcaption();
+            font-size: 21px;
+        }
+    }
+    .not-web_html {
+        width: 797px;
+        img {
+            width: 100%;
+        }
+    }
+    
+}
+
+/* === VOTING === */
+
+.voting {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+
+    h2 {
+        @include heading_block();
+        flex-basis: 1200px;
+    }
+    .voting_item {
+        flex-basis: 100%;
+        p {
+            @include text_accent();
+            margin-right: auto;
+        }
+        button {
+            padding: 20px 50px;
+            background-color: #F6F6F6;
+            @include figcaption();
+            border: none;
+            transition: .2s linear;
+            &:hover {
+                background-color: #e4e4e4;
+            }
+        }
+    }
+}
+
+/* === CONTACTS === */
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 45px;
+
+    & > * {
+        flex-basis: calc(50% - 45px)
+    }
+    h3 {
+        @include heading_block();
+        flex-basis: 1200px;
+    }
+    p {
+        @include text_accent();
+        flex-basis: 100%;
+    }
+    img {
+        margin-top: 30px;
+        width: 300px;
+    }
+}
+
+/* === FOOTER === */
+
+.footer {
+    display: flex;
+    margin-bottom: 30px;
+    h6 {
+        @include text_regular();
+        margin: auto 0;
+    }
+    img {
+        width: 700px;
+        margin-left: auto;
+    }
+}
